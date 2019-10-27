@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Observable} from "rxjs";
+import {DataService} from "./data.service";
+import {Company, Employee} from "../../../shared/model/model";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'client';
+  companies$: Observable<Company[]>;
+
+  constructor(private data: DataService) {
+    this.companies$ = this.data.getAll();
+  }
 }

@@ -1,1 +1,7 @@
-<app-company></app-company>
+<span> companies</span>
+<mat-list title="companies">
+  <mat-list-item *ngFor="let company of companies$ | async">
+    <app-company [company]="company"></app-company>
+  </mat-list-item>
+</mat-list>
+

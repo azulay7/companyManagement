@@ -1,14 +1,15 @@
-import {Controller, Get} from '@nestjs/common';
-import {Company} from "../../../shared/model/model";
-import {AppService} from "../app.service";
+import { Controller, Get } from '@nestjs/common';
+import { Company } from '../../../shared/model/model';
+import { AppService } from '../app.service';
 
 @Controller('company')
 export class CompanyController {
 
-    constructor(private readonly appService: AppService){}
+  constructor(private readonly appService: AppService) {
+  }
 
-    @Get()
-    getAll(): Company[] {
-        return this.appService.getAllCompanies();
-    }
+  @Get()
+  getAll() {
+    return this.appService.getAllCompanies();
+  }
 }

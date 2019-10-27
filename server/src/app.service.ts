@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import {Company} from "../../shared/model/model";
-
-
-const companies:Company[] = [{id:1,name:'mock', employees:{}},{id:2,name:'mock2', employees:{}}];
+import { Company } from '../../shared/model/model';
+//
+const companies: Company[] = [{ id: 1, name: 'mock', employees: {} }, { id: 2, name: 'mock2', employees: {} }];
 
 @Injectable()
 export class AppService {
@@ -11,6 +10,6 @@ export class AppService {
   }
 
   getAllCompanies(): Company[] {
-      return companies;
+    return companies;
   }
 }
